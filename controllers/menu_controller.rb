@@ -16,6 +16,7 @@ class MenuController
    puts "3 - Search for an entry"
    puts "4 - Import entries from a CSV"
    puts "5 - Exit"
+   puts "6 - View Entry Number n"
    print "Enter your selection: "
 
    selection = gets.to_i
@@ -42,6 +43,15 @@ class MenuController
        puts "Good-bye!"
        # #8
        exit(0)
+     when 6
+       puts "what is the entry numebr?"
+       entry_num = gets.to_i-1
+       if entry_num < address_book.entries.length
+        puts address_book.entries[entry_num]
+       else 
+        puts "#{entry_num} is not a valid input"
+        main_menu
+       end
      # #9
      else
        system "clear"
